@@ -6,6 +6,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Code, Users, Sparkles, GitBranch } from "lucide-react";
 import "@fontsource/press-start-2p";
+import StarsCanvas from "@/components/StarCanvas"; 
 
 export default function HomePage() {
   
@@ -24,10 +25,9 @@ export default function HomePage() {
     },
   ];
 
-  // Typewriter effect
+
   const [displayText, setDisplayText] = useState("");
   const fullText = "CodeMate";
-  const controls = useAnimation();
 
   useEffect(() => {
     let index = 0;
@@ -46,6 +46,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden flex flex-col items-center">
+      <StarsCanvas className="absolute inset-0 z-0" /> {/* Add StarsCanvas in the background */}
 
       {/* Hero Section */}
       <section className="relative text-center py-20 px-6 z-10 min-h-[150px]">
