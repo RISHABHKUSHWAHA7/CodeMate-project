@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
   }, [pathname, router]); 
 
   if (loading) return(
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="bg-black flex items-center justify-center min-h-screen">
         <StarsCanvas />
         <Loader size="50" />
     </div>
