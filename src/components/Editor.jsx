@@ -5,7 +5,6 @@ import Editor, { useMonaco } from "@monaco-editor/react";
 import axios from "axios";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "@/constants";
-import { Box } from "@chakra-ui/react";
 import Output from "./Output";
 import { doc, getDoc, updateDoc, onSnapshot } from "firebase/firestore";
 import { db } from "@/config/firebase";
@@ -140,9 +139,13 @@ export default function CodeEditor({ file }) {
 
   return (
     <div className={`bg-black m-2 h-[94%] rounded-xl p-3 ${isExpanded ? "fixed inset-0 z-50 m-0" : "relative"}`}>
-      <Box className="relative h-full">
+      {/* Replace Box with div */}
+      <div className="relative h-full">
         <div className="flex h-full">
-          <Box w={isExpanded ? "100%" : "78%"} transition="all 0.3s ease" className=" bg-green-30 h-[100%]">
+          {/* Replace Box with div and move w property to className */}
+          <div 
+            className={`${isExpanded ? "w-full" : "w-[78%]"} transition-all duration-300 ease-in-out h-[100%]`}
+          >
             <div className="flex justify-between items-center h-[10%] pr-12 ">
               {file && (
                 <div className="flex items-center bg-gray-900 text-white px-4 max-h-[50px] rounded-md shadow-md border border-gray-700 w-40">
@@ -241,10 +244,10 @@ export default function CodeEditor({ file }) {
                 suggestSelection: "recentlyUsed",
               }}
             />
-          </Box>
+          </div>
           {!isExpanded && <Output editorRef={editorRef} language={codeLanguage} />}
         </div>
-      </Box>
+      </div>
     </div>
   );
 }

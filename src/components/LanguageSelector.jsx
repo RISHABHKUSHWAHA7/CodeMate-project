@@ -1,50 +1,44 @@
 "use client";
-import {
-  Box,
-  Button,
-  MenuContent,
-  MenuItem,
-  MenuRoot,
-  MenuTrigger,
-  Text,
-} from "@chakra-ui/react";
+import React from "react";
 import { LANGUAGE_VERSIONS } from "../constants";
-import { Langar } from "next/font/google";
-import { color } from "framer-motion";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+
 const languages = Object.entries(LANGUAGE_VERSIONS);
-const active_color = "blue.400";
+
 const LanguageSelector = ({ language, onSelect }) => {
   return (
-    <Box className=" flex items-center">
-      <p className="mr-2">Language:</p>
-      <MenuRoot isLazy>
-        <MenuTrigger asChild>
-          <Button variant="unstyled" size="sm">
+    <div className="flex items-center">
+      <p className="mr-2 text-gray-300">Language:</p>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" className="px-2 py-1 flex items-center gap-1 text-white hover:bg-gray-800">
             {language}
+            <ChevronDown className="h-4 w-4 opacity-70" />
           </Button>
-        </MenuTrigger>
-        <MenuContent  className="absolute top-12 z-10">
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="bg-gray-900 border border-gray-700 text-white w-40">
           {languages.map(([lang, version]) => (
-            <MenuItem
+            <DropdownMenuItem
               key={lang}
               onClick={() => onSelect(lang)}
-              color={lang === language ? active_color : ""}
-              bg={lang === language ? "gray.900" : "transparent"}
-              _hover={{
-                color: active_color,
-                bg: "gray.900",
-              }}
+              className={`flex items-center justify-between px-3 py-2 hover:bg-gray-800 focus:bg-gray-800 cursor-pointer ${
+                lang === language ? "text-blue-400 bg-gray-800" : "text-white"
+              }`}
             >
-              {lang}
-              &nbsp;
-              <Text as="span" color="gray.600" fontSize="sm">
-                {version}
-              </Text>
-            </MenuItem>
+              <span>{lang}</span>
+              <span className="text-gray-500 text-xs">{version}</span>
+            </DropdownMenuItem>
           ))}
-        </MenuContent>
-      </MenuRoot>
-    </Box>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };
 
