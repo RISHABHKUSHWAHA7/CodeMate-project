@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💻 CodeMate – Real-Time Collaborative Code Editor
 
-## Getting Started
+CodeMate is a **real-time collaborative coding platform** built to help developers, students, and teams code together efficiently. With support for live cursors, syntax highlighting, chat, and AI-powered assistance, it redefines remote programming collaboration.
 
-First, run the development server:
+Whether you're building side-by-side with your teammates, teaching a coding session, or pair programming, CodeMate makes it feel like you're in the same room.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌟 Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 🔄 **Real-Time Code Collaboration**  
+  Multiple users can write and edit code simultaneously with live cursor tracking.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🎨 **Monaco Editor Integration**  
+  A powerful code editor with syntax highlighting, IntelliSense, and customization.
 
-## Learn More
+- 🤖 **AI Assistant (Google Gemini 1.5 Flash)**  
+  Ask coding-related queries, get code suggestions, and debug with the help of AI.
 
-To learn more about Next.js, take a look at the following resources:
+- 🔐 **Authentication via Firebase**  
+  Secure Google OAuth login for seamless access and session management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🌐 **Realtime Backend with Firebase Realtime DB & Firestore**  
+  Ensures smooth synchronization and minimal latency for collaborative coding.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ⚡ **Blazing Fast Frontend with Next.js**  
+  SSR & Static Generation optimize performance across devices.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Tech Stack
+
+| Technology          | Purpose                                          |
+|---------------------|--------------------------------------------------|
+| **Next.js 15**       | Frontend framework with server-side rendering    |
+| **Tailwind CSS**     | Utility-first CSS framework for responsive UI    |
+| **Monaco Editor**    | Code editor (same used by VS Code)               |
+| **Firebase Auth**    | Secure user authentication (Google login)        |
+| **Firebase Realtime Database** | Real-time data sync between users       |
+| **Firebase Firestore** | Persistent session data & file storage        |
+| **Google Gemini 1.5 Flash** | AI-based code assistant integration        |
+
+---
+
+## 🔧 Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/codemate.git
+   cd codemate
